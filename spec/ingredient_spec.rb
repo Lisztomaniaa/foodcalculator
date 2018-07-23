@@ -8,11 +8,12 @@ describe Ingredient do
     let(:pomodoro) { describe_class.new(name: 'Tomato', cost:100)} #or subject
     let(:pomodoro) { describe_class.new(name: 'Tomato', cost:100)}
 
-  context 'when ingridients are eaquel ' do
-   it 'they aare truly eqaul' do
-         expect(pomodoro).to eq(tomato)
-       end
-     end
+    context 'when ingridients are eaquel ' do
+      it 'they aare truly eqaul' do
+        expect(pomodoro).to eq(tomato)
+      end
+    end
+    
      context 'when ingridients are different ' do
      let(:potato) { describe_class.new(name: 'Potato', cost:90)}
       it 'they are not  eqaul' do
@@ -57,25 +58,26 @@ describe IngredientQuantity do
 end
 
 
-describe Recipe do
-  let(:dumplings) { describe_class.new(name: 'dumplings', servings_count: 6 ) }
-  let(:iq) {IngredientQuantity.new}
-   describe '#total_cost' do
-    it 'it works out the cost of the recipe' do
-      expect(ingredient_quantity.total_cost).to eq(42)
-    end
-  end
+  describe Recipe do
+    let(:dumplings) { describe_class.new(name: 'dumplings', servings_count: 6 ) }
+    let(:iq) {IngredientQuantity.new}
+    describe '#total_cost' do
+      it 'it works out the cost of the recipe' do
+        expect(ingredient_quantity.total_cost).to eq(42)
+      end 
+   end
 
    describe '#cost_of_one_serving' do
     it 'returns the total cost of the one serving of this dish' do
       expect(dumplings.cost_of_one_serving).to eq('dumpligs', 1)
     end
-  end
+   end
 
-  describe '#ingredient_quantities_per_servings' do
-    it 'returns an array of ingredient '
+    describe '#ingredient_quantities_per_servings' do
+      it 'returns an array of ingredient ' do
        expect(@iq.ingredient_quantity).to match([1,34,2,1])
-  end
+      end  
+    end
 
 
     describe '#ingredient_quantities_per_one_serving' do
@@ -91,8 +93,6 @@ describe Recipe do
 
        iq=IngredientQuantity.new
        it 'Returns the total cost of served meals' do
-
-
        end
      end
 
