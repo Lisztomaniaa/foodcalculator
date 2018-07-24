@@ -24,10 +24,10 @@ describe IngredientQuantity do
   end
 
   describe '#*' do
-    it "multiplies quantity by the input argument" do
+    it 'multiplies quantity by the input argument' do
       expect(ingredient_quantity.multiply(1,2).to eq(4))
    end
-    it "will not multiply non positive numbers" do
+    it 'will not multiply non positive numbers' do
       expect(ingredient_quantity * 0).to raise_error(ArgumentError)
       expect(ingredient_quantity * -2).to raise_error(ArgumentError)
     end

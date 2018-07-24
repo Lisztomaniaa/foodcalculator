@@ -1,6 +1,5 @@
 describe Recipe do
-  let(:dumplings) { describe_class.new(name: 'dumplings', servings_count: 6 ) }
-
+  let(:dumplings) { describe_class.new(name: 'dumplings', servings: 6 ) }
 
   describe '#total_cost' do
     it 'it works out the total cost of the recipe' do
@@ -16,8 +15,8 @@ describe Recipe do
 
   describe '#ingredient_quantities_per_servings' do
     it 'should take positive arguments' do
-      expect { dumplings.ingredient_quantities_per_servings(0) }.to raise_error(ArgumentError)
-      expect { dumplings.ingredient_quantities_per_servings(-1) }.to raise_error(ArgumentError)
+      expect(dumplings.ingredient_quantities_per_servings(0)).to raise_error(ArgumentError)
+      expect(dumplings.ingredient_quantities_per_servings(-1)).to raise_error(ArgumentError)
     end
 
     it 'it works out the ingredient quantities per n servings' do
